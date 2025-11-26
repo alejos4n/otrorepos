@@ -12,7 +12,7 @@ export class OtrorepoStack extends cdk.Stack {
     new CodePipeline(this, 'Pipeline', {
       pipelineName: 'TestPipeline',
       synth: new ShellStep('Synth', {
-        input: CodePipelineSource.gitHub('alejos4n/ci-cd-aws-pipeline-demo', 'main'), //Remember to change 
+        input: CodePipelineSource.gitHub('alejos4n/otrorepos', 'main'), //Remember to change 
         commands: ['npm ci', 
                    'npm run build', 
                    'npx cdk synth']
