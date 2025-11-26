@@ -9,7 +9,7 @@ export class OtrorepoStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    new CodePipeline(this, 'Pipeline', {
+    const pipeline = new CodePipeline(this, 'Pipeline', {
       pipelineName: 'TestPipeline',
       synth: new ShellStep('Synth', {
         input: CodePipelineSource.gitHub('alejos4n/otrorepos', 'main'), //Remember to change 
@@ -19,7 +19,7 @@ export class OtrorepoStack extends cdk.Stack {
       })
     });
 
-/*
+
 
     const testingStage = pipeline.addStage(new MyPipelineAppStage(this, "test", {
       env: { account: "210615636037", region: "us-east-2" }
@@ -31,7 +31,7 @@ export class OtrorepoStack extends cdk.Stack {
 
     const prodStage = pipeline.addStage(new MyPipelineAppStage(this, "prod", {
       env: { account: "210615636037", region: "us-east-2" } 
-    })); */
+    })); 
   }
 }
    
