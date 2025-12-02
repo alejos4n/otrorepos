@@ -22,7 +22,7 @@ export class OtrorepoStack extends cdk.Stack {
 
 
     const testingStage = pipeline.addStage(new MyPipelineAppStage(this, "test", {
-      env: { account: datos.accountId, region: datos.region }
+      env: { account: "210615636037", region: "us-east-2" }
     }));
 
 

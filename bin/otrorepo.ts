@@ -6,8 +6,8 @@ import { OtrorepoStack } from '../lib/otrorepo-stack';
 const app = new cdk.App();
 new OtrorepoStack(app, 'OtrorepoStack', {
   env: {
-    account: datos.accountId,
-    region: datos.region,
+    account: '210615636037',
+    region: 'us-east-2',
   }
 });
 
