@@ -1,6 +1,7 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from "constructs";
 import { MyLambdaStack } from './lambda-stack';
+import { InfrastructureStack } from "./infrastructure-stack";
 
 export class MyPipelineAppStage extends cdk.Stage {
     
@@ -8,5 +9,7 @@ export class MyPipelineAppStage extends cdk.Stage {
       super(scope, stageName, props);
   
       const lambdaStack = new MyLambdaStack(this, 'LambdaStack', stageName);      
+      const infraStack = new InfrastructureStack(this, 'InfraStack', {
+        stageName: stageName});
     }
 }
