@@ -3,7 +3,7 @@ import { Construct } from 'constructs';
 import { CodePipeline, CodePipelineSource, ShellStep, Step } from 'aws-cdk-lib/pipelines';
 import { ManualApprovalStep } from 'aws-cdk-lib/pipelines';
 import { MyPipelineAppStage } from './stage';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
+import datos from "../utils/datos.json"
 
 export class OtrorepoStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -22,7 +22,7 @@ export class OtrorepoStack extends cdk.Stack {
 
 
     const testingStage = pipeline.addStage(new MyPipelineAppStage(this, "test", {
-      env: { account: "210615636037", region: "us-east-2" }
+      env: { account: datos.accountId, region: datos.region }
     }));
 
 
