@@ -3,7 +3,7 @@ import { Construct } from 'constructs';
 import { CodePipeline, CodePipelineSource, ShellStep, Step } from 'aws-cdk-lib/pipelines';
 import { ManualApprovalStep } from 'aws-cdk-lib/pipelines';
 import { MyPipelineAppStage } from './stage';
-import datos from "../utils/datos.json"
+//import datos from "../utils/datos.json"
 
 export class OtrorepoStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
